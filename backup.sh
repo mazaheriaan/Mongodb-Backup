@@ -31,7 +31,7 @@ readonly RMDAYS="$(date --iso -d '80 days ago')"  # TODAY minus X days - too old
 if [[ "$COLLECTION_NAME" != "others" ]]; then
     mongodump -d ${DATABASE_NAME} -c ${COLLECTION_NAME} -o "${DUMP_PATH}"
 else
-    mongodump -d ${DATABASE_NAME} --excludeCollection=users --excludeCollection=channels --excludeCollection=joinchannels -o "${DUMP_PATH}"
+    mongodump -d ${DATABASE_NAME} --excludeCollection=collection1 --excludeCollection=collection2 --excludeCollection=collection3 -o "${DUMP_PATH}"
 fi
 
 # Compress users collection
